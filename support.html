@@ -1,0 +1,91 @@
+<!doctype html>
+<!--
+  支援頁 —— App Store 必填嗰條 Support URL 指呢度。
+  擺喺 https://kept.nexalimited.io/support
+
+  ⚠️ 入面每一條答案都要對得返實際行為。特別係「點解抽唔到快照」同「影片」嗰兩條 ——
+     嗰兩樣係用戶最會覺得係 bug 但其實係刻意設計，寫清楚好過等人留一星。
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kept — Support</title>
+<style>
+  :root { color-scheme: dark light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 72px 24px 120px;
+    background: #000; color: #E7E9EA;
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 640px; margin: 0 auto; }
+  .mark { width: 34px; height: 34px; display: block; margin-bottom: 40px; }
+  h1 { font-size: 34px; line-height: 1.15; letter-spacing: -0.025em; margin: 0 0 8px; }
+  .lede { color: #71767B; margin: 0 0 48px; }
+  h2 { font-size: 19px; letter-spacing: -0.015em; margin: 40px 0 8px; }
+  p { margin: 0 0 16px; }
+  strong { color: #fff; }
+  ol, ul { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  a { color: #E7E9EA; }
+  .box { border: 1px solid #2F3336; border-radius: 14px; padding: 20px 22px; margin: 32px 0; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #2F3336; color: #71767B; font-size: 15px; }
+  @media (prefers-color-scheme: light) {
+    body { background: #fff; color: #0F1419; }
+    .lede, footer { color: #536471; }
+    footer, .box { border-color: #EFF3F4; }
+    a { color: #0F1419; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <svg class="mark" viewBox="0 0 1024 1024" aria-label="Kept" role="img">
+    <path fill="currentColor" d="M296 212h136v600l-68-64-68 64z"/>
+    <path fill="currentColor" d="M432 512l232-232a68 68 0 0 1 96 96L528 608l232 224a68 68 0 0 1-96 96L432 696z"/>
+  </svg>
+
+  <h1>Support</h1>
+  <p class="lede">Kept for iOS</p>
+
+  <div class="box">
+    <p style="margin:0">Email <a href="mailto:kept@nexalimited.io">kept@nexalimited.io</a>. Kept is made by one person, so replies take a day or two.</p>
+  </div>
+
+  <h2>How do I save something?</h2>
+  <p>In any app, tap Share and choose Kept. Works with links, text, photos and videos.</p>
+  <p>If Kept is not in the share sheet, scroll the row of apps to the end, tap More, and switch Kept on. You can drag it up the list from there.</p>
+
+  <h2>Why did some items not get a picture or the full text?</h2>
+  <p><strong>This is expected, not a fault.</strong> Some pages need a login before they show anything — Instagram and Facebook often do. When Kept cannot reach the original, it keeps the link and the text you shared, marks the item, and you can tap Refresh on it later to try again.</p>
+  <p>Nothing is ever dropped because a fetch failed.</p>
+
+  <h2>Why can't I save the video from YouTube or TikTok?</h2>
+  <p>Their terms do not allow offline copies, so Kept does not make one. For those platforms Kept keeps the title, the thumbnail and the link.</p>
+  <p>Videos you share <em>directly</em> into Kept — from your camera roll, or forwarded in a messaging app — are stored whole on your phone. So are videos from ordinary web pages and public Telegram channels, where the terms allow it.</p>
+
+  <h2>Something is filed under the wrong topic</h2>
+  <p>Open the item and tap the topic you want under Topics. Your choice sticks, and Kept stops guessing for that item. Deselect everything to hand it back to automatic filing.</p>
+
+  <h2>Can I change the language?</h2>
+  <p>Kept follows your phone. To override it, open Settings in Kept and pick from the Language list. Twelve languages are available.</p>
+
+  <h2>Where is my data? Can I get it out?</h2>
+  <p>Everything is on your phone and nowhere else. Settings has <strong>Export everything</strong>, which produces a JSON file with your items, notes and collections.</p>
+  <p>Please note the export does not yet include the picture and video files themselves, and there is no import yet. Both are being worked on. Until then, <strong>deleting the app deletes your library</strong> — there is no cloud copy to restore from.</p>
+
+  <h2>Does Kept sync between my devices?</h2>
+  <p>Not yet. Everything stays on the device you saved it on.</p>
+
+  <h2>Do you see what I save?</h2>
+  <p>No. There is no account and no server. See the <a href="privacy.html">privacy page</a> for the detail.</p>
+
+  <h2>How do I remove the sample content?</h2>
+  <p>Settings, then Remove sample content. Only the sample items go; anything you saved yourself is untouched.</p>
+
+  <footer>Kept is made by Nexa Limited, Hong Kong.</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<!--
+  私隱政策 —— App Store 必填嗰條 URL 指呢度。
+  擺喺 https://kept.nexalimited.io/privacy
+
+  ⚠️ 呢頁講嘅每一句都要對得返實際行為。而家全部對得住：
+     冇帳號、冇 server、冇 analytics、冇 crash 上報（`store/listing-en.md` 嗰節列咗證據）。
+  ⚠️ 第日加咗 iCloud 備份（KP14）或者 AI 功能（KP15）就一定要返嚟改呢頁，
+     同時改 App Store Connect 嘅私隱標籤同 `ios/App/App/PrivacyInfo.xcprivacy`。
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kept — Privacy</title>
+<style>
+  :root { color-scheme: dark light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 72px 24px 120px;
+    background: #000; color: #E7E9EA;
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 640px; margin: 0 auto; }
+  .mark { width: 34px; height: 34px; display: block; margin-bottom: 40px; }
+  h1 { font-size: 34px; line-height: 1.15; letter-spacing: -0.025em; margin: 0 0 8px; }
+  .when { color: #71767B; font-size: 15px; margin: 0 0 48px; }
+  h2 { font-size: 20px; letter-spacing: -0.015em; margin: 44px 0 10px; }
+  p { margin: 0 0 16px; }
+  strong { color: #fff; }
+  ul { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  a { color: #E7E9EA; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #2F3336; color: #71767B; font-size: 15px; }
+  @media (prefers-color-scheme: light) {
+    body { background: #fff; color: #0F1419; }
+    .when, footer { color: #536471; }
+    footer { border-top-color: #EFF3F4; }
+    a { color: #0F1419; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <svg class="mark" viewBox="0 0 1024 1024" aria-label="Kept" role="img">
+    <path fill="currentColor" d="M296 212h136v600l-68-64-68 64z"/>
+    <path fill="currentColor" d="M432 512l232-232a68 68 0 0 1 96 96L528 608l232 224a68 68 0 0 1-96 96L432 696z"/>
+  </svg>
+
+  <h1>Privacy</h1>
+  <p class="when">Kept for iOS · last updated 15 September 2026</p>
+
+  <p><strong>Kept does not collect anything about you.</strong> Not your name, not your email, not what you save, not how you use the app. There is no account to create and no server to send anything to.</p>
+
+  <h2>Where your things are kept</h2>
+  <p>Everything you save — the text, the pictures, the videos, your notes, your tags, your collections — is stored on your device only. It is never uploaded. The developer cannot see it, cannot recover it, and has no way to reach it.</p>
+  <p>If you delete the app, that data goes with it. There is no copy anywhere else.</p>
+
+  <h2>The one time Kept uses the network</h2>
+  <p>When you save a link, Kept tries to fetch the original text and picture so you keep a readable snapshot. To do that, <strong>your device asks that website directly</strong> — the same request your browser would make if you opened the link yourself.</p>
+  <p>That request goes to the site you saved, not to us. Nothing passes through a server we run, because we do not run one. Those sites may keep their own server logs, exactly as they would if you visited them normally.</p>
+  <p>If the fetch fails, Kept keeps the link and the text you shared and moves on.</p>
+
+  <h2>What Kept does not do</h2>
+  <ul>
+    <li>No accounts, sign-ups or logins</li>
+    <li>No analytics, tracking or advertising identifiers</li>
+    <li>No crash reporting</li>
+    <li>No third-party SDKs that collect data</li>
+    <li>No cloud sync or backup</li>
+    <li>No selling or sharing of anything, because there is nothing held to sell or share</li>
+  </ul>
+
+  <h2>Topics</h2>
+  <p>Kept files what you save under topics. That is worked out on your device by looking at the words in the text. Nothing is sent anywhere to do it, and you can change any topic by hand.</p>
+
+  <h2>Photos and videos</h2>
+  <p>A photo or video you share into Kept is copied into Kept's own storage on the device. Kept does not read your photo library and does not ask for access to it.</p>
+
+  <h2>Children</h2>
+  <p>Kept is rated 4+ and has no social features, no user-to-user content and no advertising. Since no data is collected from anyone, none is collected from children.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If a future version of Kept ever sends anything off the device, this page will say so before that version ships, the App Store privacy label will be updated to match, and the feature will be something you switch on yourself.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy: <a href="mailto:kept@nexalimited.io">kept@nexalimited.io</a></p>
+
+  <footer>Kept is made by Nexa Limited, Hong Kong.</footer>
+</main>
+</body>
+</html>
