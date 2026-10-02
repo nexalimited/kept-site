@@ -3,9 +3,11 @@
   私隱政策 —— App Store 必填嗰條 URL 指呢度。
   擺喺 https://kept.nexalimited.io/privacy
 
-  ⚠️ 呢頁講嘅每一句都要對得返實際行為。而家全部對得住：
-     冇帳號、冇 server、冇 analytics、冇 crash 上報（`store/listing-en.md` 嗰節列咗證據）。
-  ⚠️ 第日加咗 iCloud 備份（KP14）或者 AI 功能（KP15）就一定要返嚟改呢頁，
+  ⚠️ 呢頁講嘅每一句都要對得返實際行為。2026-10-02 對 1.1 重寫:1.1 有 Kept Pro 嘅 iCloud 同步／備份
+     （CloudKit private database,用戶自己嘅 iCloud）同網頁版（QR 配對,AES-GCM 加密副本經 CloudKit public
+     database 傳,10 分鐘後刪,鎖匙只喺 QR）。冇帳號、冇 server、冇 analytics、冇 crash 上報照舊。
+     對應代碼:`ShareInboxPlugin.swift` 嘅 cloudPush／syncPush／pair 一段（搜 `KeptPair`、`pairTTL`）。
+  ⚠️ 第日加咗 AI 功能（KP15）或者任何新嘅出街請求，就一定要返嚟改呢頁，
      同時改 App Store Connect 嘅私隱標籤同 `ios/App/App/PrivacyInfo.xcprivacy`。
 -->
 <html lang="en">
@@ -49,13 +51,22 @@
   </svg>
 
   <h1>Privacy</h1>
-  <p class="when">Kept for iOS · last updated 15 September 2026</p>
+  <p class="when">Kept for iOS · last updated 2 October 2026</p>
 
-  <p><strong>Kept does not collect anything about you.</strong> Not your name, not your email, not what you save, not how you use the app. There is no account to create and no server to send anything to.</p>
+  <p><strong>Kept does not collect anything about you.</strong> Not your name, not your email, not what you save, not how you use the app. There is no account to create, and Nexa Limited runs no server that receives your data.</p>
 
   <h2>Where your things are kept</h2>
-  <p>Everything you save — the text, the pictures, the videos, your notes, your tags, your collections — is stored on your device only. It is never uploaded. The developer cannot see it, cannot recover it, and has no way to reach it.</p>
-  <p>If you delete the app, that data goes with it. There is no copy anywhere else.</p>
+  <p>Everything you save — the text, the pictures, the videos, your notes, your tags, your collections — is stored on your device. By default it goes nowhere else. The developer cannot see it, cannot recover it, and has no way to reach it.</p>
+  <p>If you delete the app and have not turned on iCloud (below) or exported a backup, that data goes with it.</p>
+
+  <h2>iCloud sync and backup (Kept Pro, optional)</h2>
+  <p>Kept Pro can sync your saves between your iPhone and iPad and keep a backup. This is <strong>off until you turn it on</strong>: Kept asks once after you buy Pro, and you can switch it off any time in Settings. Free use never writes to iCloud.</p>
+  <p>When it is on, your items, notes, tags, collections, pictures and videos are stored in <strong>your own iCloud account</strong>, in Kept's private area of Apple's CloudKit. It is tied to your Apple Account and counts against your own iCloud storage. Nexa Limited has no access to it and cannot read it. The sample content shown on first launch is never uploaded.</p>
+  <p>Apple operates iCloud and handles that data under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.</p>
+
+  <h2>Kept on the web (Kept Pro, optional)</h2>
+  <p>keptsave.com shows a read-only copy of your timeline in a browser. It has no accounts or logins. It works only when you choose it: the page shows a QR code, you scan it in Kept and confirm, and Kept then sends an <strong>encrypted copy</strong> of your timeline through Apple's CloudKit to that browser.</p>
+  <p>The decryption key exists only in the QR code and in that browser's memory. It is never sent to Apple or to us, so neither can read the copy. The copy is deleted from CloudKit after 10 minutes, or as soon as you sign the browser out from your phone. keptsave.com is a static page; like any host, its provider may keep ordinary server logs of page requests.</p>
 
   <h2>The one time Kept uses the network</h2>
   <p>When you save a link, Kept tries to fetch the original text and picture so you keep a readable snapshot. To do that, <strong>your device asks that website directly</strong> — the same request your browser would make if you opened the link yourself.</p>
@@ -68,7 +79,7 @@
     <li>No analytics, tracking or advertising identifiers</li>
     <li>No crash reporting</li>
     <li>No third-party SDKs that collect data</li>
-    <li>No cloud sync or backup</li>
+    <li>No Kept server, and no copy of your data held by us — iCloud, if you turn it on, is your own</li>
     <li>No selling or sharing of anything, because there is nothing held to sell or share</li>
   </ul>
 
@@ -81,8 +92,14 @@
   <h2>Children</h2>
   <p>Kept is rated 4+ and has no social features, no user-to-user content and no advertising. Since no data is collected from anyone, none is collected from children.</p>
 
+  <h2>Purchases and updates</h2>
+  <p>Kept Pro is bought through Apple's In-App Purchase. Apple handles payment; Kept never sees your card or payment details. Settings can check whether a newer version exists by asking the App Store, sending only Kept's public app number.</p>
+
+  <h2>Home Screen widget</h2>
+  <p>The widget reads a small list of your saves that Kept keeps on your device. It does not use the network.</p>
+
   <h2>Changes to this policy</h2>
-  <p>If a future version of Kept ever sends anything off the device, this page will say so before that version ships, the App Store privacy label will be updated to match, and the feature will be something you switch on yourself.</p>
+  <p>If a future version of Kept ever sends anything new off the device, this page will say so before that version ships, the App Store privacy label will be updated to match, and the feature will be something you switch on yourself.</p>
 
   <h2>Contact</h2>
   <p>Questions about this policy: <a href="mailto:kept@nexalimited.io">kept@nexalimited.io</a></p>
