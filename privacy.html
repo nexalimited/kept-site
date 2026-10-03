@@ -5,7 +5,7 @@
 
   ⚠️ 呢頁講嘅每一句都要對得返實際行為。2026-10-02 對 1.1 重寫:1.1 有 Kept Pro 嘅 iCloud 同步／備份
      （CloudKit private database,用戶自己嘅 iCloud）同網頁版（QR 配對,AES-GCM 加密副本經 CloudKit public
-     database 傳,10 分鐘後刪,鎖匙只喺 QR）。冇帳號、冇 server、冇 analytics、冇 crash 上報照舊。
+     database 傳,連線期間保留並跟手機更新(最長 30 日),鎖匙只喺 QR）。冇帳號、冇 server、冇 analytics、冇 crash 上報照舊。
      對應代碼:`ShareInboxPlugin.swift` 嘅 cloudPush／syncPush／pair 一段（搜 `KeptPair`、`pairTTL`）。
   ⚠️ 第日加咗 AI 功能（KP15）或者任何新嘅出街請求，就一定要返嚟改呢頁，
      同時改 App Store Connect 嘅私隱標籤同 `ios/App/App/PrivacyInfo.xcprivacy`。
@@ -51,7 +51,7 @@
   </svg>
 
   <h1>Privacy</h1>
-  <p class="when">Kept for iOS · last updated 2 October 2026</p>
+  <p class="when">Kept for iOS · last updated 3 October 2026</p>
 
   <p><strong>Kept does not collect anything about you.</strong> Not your name, not your email, not what you save, not how you use the app. There is no account to create, and Nexa Limited runs no server that receives your data.</p>
 
@@ -66,7 +66,7 @@
 
   <h2>Kept on the web (Kept Pro, optional)</h2>
   <p>keptsave.com shows a read-only copy of your timeline in a browser. It has no accounts or logins. It works only when you choose it: the page shows a QR code, you scan it in Kept and confirm, and Kept then sends an <strong>encrypted copy</strong> of your timeline through Apple's CloudKit to that browser.</p>
-  <p>The decryption key exists only in the QR code and in that browser's memory. It is never sent to Apple or to us, so neither can read the copy. The copy is deleted from CloudKit after 10 minutes, or as soon as you sign the browser out from your phone. keptsave.com is a static page; like any host, its provider may keep ordinary server logs of page requests.</p>
+  <p>The decryption key exists only in the QR code and in that browser's memory. It is never sent to Apple or to us, so neither can read the copy. While the browser stays connected, Kept keeps that copy up to date as you make changes, so the web view follows your phone. The copy is deleted from CloudKit as soon as you sign the browser out from Settings, and in any case 30 days after the last update. Kept remembers the key for each connected browser in this iPhone's Keychain (this device only, not backed up) so it can send updates. keptsave.com is a static page; like any host, its provider may keep ordinary server logs of page requests.</p>
 
   <h2>The one time Kept uses the network</h2>
   <p>When you save a link, Kept tries to fetch the original text and picture so you keep a readable snapshot. To do that, <strong>your device asks that website directly</strong> — the same request your browser would make if you opened the link yourself.</p>
